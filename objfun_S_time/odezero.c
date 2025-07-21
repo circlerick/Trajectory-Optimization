@@ -1,0 +1,761 @@
+/*
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
+ * odezero.c
+ *
+ * Code generation for function 'odezero'
+ *
+ */
+
+/* Include files */
+#include "odezero.h"
+#include "eml_int_forloop_overflow_check.h"
+#include "mtimes.h"
+#include "ntrp89.h"
+#include "objfun_S_time_data.h"
+#include "objfun_S_time_emxutil.h"
+#include "objfun_S_time_types.h"
+#include "rt_nonfinite.h"
+#include "stopfuel.h"
+#include "stopfunc.h"
+#include "mwmathutil.h"
+#include <math.h>
+
+/* Variable Definitions */
+static emlrtRSInfo pe_emlrtRSI = {
+    29,        /* lineNo */
+    "odezero", /* fcnName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pathName */
+};
+
+static emlrtRSInfo qe_emlrtRSI = {
+    60,        /* lineNo */
+    "odezero", /* fcnName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pathName */
+};
+
+static emlrtRSInfo re_emlrtRSI = {
+    72,        /* lineNo */
+    "odezero", /* fcnName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pathName */
+};
+
+static emlrtRSInfo se_emlrtRSI = {
+    106,       /* lineNo */
+    "odezero", /* fcnName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pathName */
+};
+
+static emlrtRSInfo te_emlrtRSI = {
+    107,       /* lineNo */
+    "odezero", /* fcnName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pathName */
+};
+
+static emlrtRSInfo ue_emlrtRSI = {
+    158,       /* lineNo */
+    "odezero", /* fcnName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pathName */
+};
+
+static emlrtRSInfo ve_emlrtRSI = {
+    159,       /* lineNo */
+    "odezero", /* fcnName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pathName */
+};
+
+static emlrtRSInfo we_emlrtRSI = {
+    160,       /* lineNo */
+    "odezero", /* fcnName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pathName */
+};
+
+static emlrtRSInfo xe_emlrtRSI = {
+    161,       /* lineNo */
+    "odezero", /* fcnName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pathName */
+};
+
+static emlrtRSInfo ye_emlrtRSI = {
+    167,       /* lineNo */
+    "odezero", /* fcnName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pathName */
+};
+
+static emlrtRSInfo hf_emlrtRSI = {
+    194,    /* lineNo */
+    "nany", /* fcnName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pathName */
+};
+
+static emlrtRTEInfo k_emlrtRTEI = {
+    48,        /* lineNo */
+    27,        /* colNo */
+    "odezero", /* fName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pName */
+};
+
+static emlrtRTEInfo qc_emlrtRTEI = {
+    35,        /* lineNo */
+    1,         /* colNo */
+    "odezero", /* fName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pName */
+};
+
+static emlrtRTEInfo rc_emlrtRTEI = {
+    158,       /* lineNo */
+    5,         /* colNo */
+    "odezero", /* fName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pName */
+};
+
+static emlrtRTEInfo sc_emlrtRTEI = {
+    106,       /* lineNo */
+    9,         /* colNo */
+    "odezero", /* fName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pName */
+};
+
+static emlrtRTEInfo tc_emlrtRTEI = {
+    160,       /* lineNo */
+    5,         /* colNo */
+    "odezero", /* fName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pName */
+};
+
+static emlrtRTEInfo uc_emlrtRTEI = {
+    116,       /* lineNo */
+    13,        /* colNo */
+    "odezero", /* fName */
+    "C:\\Program "
+    "Files\\MATLAB\\R2022b\\toolbox\\eml\\lib\\matlab\\funfun\\private\\odezero"
+    ".m" /* pName */
+};
+
+/* Function Definitions */
+void b_odezero(const emlrtStack *sp, real_T v, real_T t,
+               const emxArray_real_T *y, real_T tnew,
+               const emxArray_real_T *ynew, real_T t0, real_T h,
+               const emxArray_real_T *f, int32_T *nout, emxArray_real_T *tout,
+               emxArray_real_T *yout, emxArray_int32_T *iout, real_T *vnew,
+               boolean_T *stop)
+{
+  emlrtStack b_st;
+  emlrtStack c_st;
+  emlrtStack d_st;
+  emlrtStack st;
+  emxArray_real_T *b;
+  emxArray_real_T *yR;
+  emxArray_real_T *ytry;
+  const real_T *y_data;
+  const real_T *ynew_data;
+  real_T absx;
+  real_T delta;
+  real_T tL;
+  real_T tR;
+  real_T tdir;
+  real_T tol;
+  real_T tol_tmp;
+  real_T ttry;
+  real_T vL;
+  real_T vR;
+  real_T vtry;
+  real_T *yR_data;
+  real_T *yout_data;
+  real_T *ytry_data;
+  int32_T i;
+  int32_T nrows;
+  int32_T *iout_data;
+  char_T lastmoved;
+  boolean_T guard1 = false;
+  st.prev = sp;
+  st.tls = sp->tls;
+  b_st.prev = &st;
+  b_st.tls = st.tls;
+  c_st.prev = &b_st;
+  c_st.tls = b_st.tls;
+  d_st.prev = &c_st;
+  d_st.tls = c_st.tls;
+  ynew_data = ynew->data;
+  y_data = y->data;
+  emlrtHeapReferenceStackEnterFcnR2012b((emlrtConstCTX)sp);
+  *nout = 0;
+  tout->size[0] = 1;
+  tout->size[1] = 0;
+  yout->size[0] = y->size[0];
+  yout->size[1] = 0;
+  iout->size[0] = 1;
+  iout->size[1] = 0;
+  absx = muDoubleScalarAbs(t);
+  if (muDoubleScalarIsInf(absx) || muDoubleScalarIsNaN(absx)) {
+    delta = rtNaN;
+  } else if (absx < 4.4501477170144028E-308) {
+    delta = 4.94065645841247E-324;
+  } else {
+    frexp(absx, &nrows);
+    delta = ldexp(1.0, nrows - 53);
+  }
+  absx = muDoubleScalarAbs(tnew);
+  if (muDoubleScalarIsInf(absx) || muDoubleScalarIsNaN(absx)) {
+    absx = rtNaN;
+  } else if (absx < 4.4501477170144028E-308) {
+    absx = 4.94065645841247E-324;
+  } else {
+    frexp(absx, &i);
+    absx = ldexp(1.0, i - 53);
+  }
+  tol_tmp = tnew - t;
+  tol = muDoubleScalarMin(128.0 * muDoubleScalarMax(delta, absx),
+                          muDoubleScalarAbs(tol_tmp));
+  tdir = muDoubleScalarSign(tol_tmp);
+  *stop = false;
+  tL = t;
+  vL = v;
+  st.site = &pe_emlrtRSI;
+  b_st.site = &uf_emlrtRSI;
+  *vnew = stopfuel(&b_st, ynew);
+  tR = tnew;
+  emxInit_real_T(sp, &yR, 1, &qc_emlrtRTEI);
+  i = yR->size[0];
+  yR->size[0] = ynew->size[0];
+  emxEnsureCapacity_real_T(sp, yR, i, &qc_emlrtRTEI);
+  yR_data = yR->data;
+  nrows = ynew->size[0];
+  for (i = 0; i < nrows; i++) {
+    yR_data[i] = ynew_data[i];
+  }
+  vR = *vnew;
+  vtry = 0.0;
+  ttry = tnew;
+  lastmoved = 'N';
+  emxInit_real_T(sp, &ytry, 1, &sc_emlrtRTEI);
+  emxInit_real_T(sp, &b, 1, &vc_emlrtRTEI);
+  guard1 = false;
+  real_T d;
+  int32_T exitg1;
+  do {
+    exitg1 = 0;
+    d = muDoubleScalarSign(vL);
+    if (d != muDoubleScalarSign(vR)) {
+      absx = vR - vL;
+      if (0.0 * absx >= 0.0) {
+        delta = tR - tL;
+        tol_tmp = muDoubleScalarAbs(delta);
+        if (tol_tmp <= tol) {
+          st.site = &ue_emlrtRSI;
+          i = tout->size[0] * tout->size[1];
+          tout->size[0] = 1;
+          tout->size[1] = 1;
+          emxEnsureCapacity_real_T(&st, tout, i, &rc_emlrtRTEI);
+          ytry_data = tout->data;
+          b_st.site = &ff_emlrtRSI;
+          st.site = &ve_emlrtRSI;
+          nrows = y->size[0];
+          i = yout->size[0] * yout->size[1];
+          yout->size[0] = y->size[0];
+          yout->size[1] = 1;
+          emxEnsureCapacity_real_T(&st, yout, i, &wb_emlrtRTEI);
+          yout_data = yout->data;
+          b_st.site = &ff_emlrtRSI;
+          for (i = 0; i < nrows; i++) {
+            yout_data[i] = 0.0;
+          }
+          b_st.site = &gf_emlrtRSI;
+          if (y->size[0] > 2147483646) {
+            c_st.site = &od_emlrtRSI;
+            check_forloop_overflow_error(&c_st);
+          }
+          st.site = &we_emlrtRSI;
+          i = iout->size[0] * iout->size[1];
+          iout->size[0] = 1;
+          iout->size[1] = 1;
+          emxEnsureCapacity_int32_T(&st, iout, i, &tc_emlrtRTEI);
+          iout_data = iout->data;
+          b_st.site = &ff_emlrtRSI;
+          st.site = &xe_emlrtRSI;
+          ytry_data[0] = tR;
+          iout_data[0] = 1;
+          nrows = yR->size[0];
+          for (i = 0; i < nrows; i++) {
+            yout_data[i] = yR_data[i];
+          }
+          *nout = 1;
+          st.site = &ye_emlrtRSI;
+          b_st.site = &hf_emlrtRSI;
+          *stop = (tL != t0);
+          exitg1 = 1;
+        } else {
+          real_T b_b[14];
+          boolean_T guard2 = false;
+          guard2 = false;
+          if (tL == t) {
+            st.site = &qe_emlrtRSI;
+            if ((vL == 0.0) && (vR != 0.0)) {
+              ttry = tL + tdir * 0.5 * tol;
+            } else {
+              guard2 = true;
+            }
+          } else {
+            guard2 = true;
+          }
+          if (guard2) {
+            real_T change;
+            change = 1.0;
+            st.site = &re_emlrtRSI;
+            if (vL == 0.0) {
+              if ((tdir * ttry > tdir * tR) && (vtry != vR)) {
+                absx = 1.0 - vR * (ttry - tR) / ((vtry - vR) * delta);
+                if ((absx < 0.0) || (absx > 1.0)) {
+                  absx = 0.5;
+                }
+              } else {
+                absx = 0.5;
+              }
+            } else if (vR == 0.0) {
+              if ((tdir * ttry < tdir * tL) && (vtry != vL)) {
+                absx = vL * (tL - ttry) / ((vtry - vL) * delta);
+                if ((absx < 0.0) || (absx > 1.0)) {
+                  absx = 0.5;
+                }
+              } else {
+                absx = 0.5;
+              }
+            } else {
+              absx = -vL / absx;
+            }
+            if (absx < 1.0) {
+              change = absx;
+            }
+            change *= tol_tmp;
+            change = muDoubleScalarMax(
+                0.5 * tol, muDoubleScalarMin(change, tol_tmp - 0.5 * tol));
+            ttry = tL + tdir * change;
+          }
+          st.site = &se_emlrtRSI;
+          i = ytry->size[0];
+          ytry->size[0] = y->size[0];
+          emxEnsureCapacity_real_T(&st, ytry, i, &sc_emlrtRTEI);
+          ytry_data = ytry->data;
+          nrows = y->size[0];
+          for (i = 0; i < nrows; i++) {
+            ytry_data[i] = y_data[i];
+          }
+          b_st.site = &af_emlrtRSI;
+          absx = (ttry - t) / h;
+          delta = absx * absx;
+          for (i = 0; i < 14; i++) {
+            b_b[i] = ((((((dv1[i] * absx + dv2[i]) * absx + dv3[i]) * absx +
+                         dv4[i]) *
+                            absx +
+                        dv5[i]) *
+                           absx +
+                       dv6[i]) *
+                          absx +
+                      dv7[i]) *
+                     delta;
+          }
+          b_b[0] += absx;
+          c_st.site = &bf_emlrtRSI;
+          d_st.site = &cf_emlrtRSI;
+          mtimes(&d_st, f, b_b, b);
+          yout_data = b->data;
+          if (y->size[0] == b->size[0]) {
+            nrows = y->size[0];
+            for (i = 0; i < nrows; i++) {
+              ytry_data[i] = y_data[i] + h * yout_data[i];
+            }
+          } else {
+            g_binary_expand_op(ytry, y, h, b);
+            ytry_data = ytry->data;
+          }
+          st.site = &te_emlrtRSI;
+          b_st.site = &uf_emlrtRSI;
+          vtry = stopfuel(&b_st, ytry);
+          if ((d != muDoubleScalarSign(vtry)) && (0.0 * (vtry - vL) >= 0.0)) {
+            absx = tR;
+            tR = ttry;
+            ttry = absx;
+            i = yR->size[0];
+            yR->size[0] = ytry->size[0];
+            emxEnsureCapacity_real_T(sp, yR, i, &uc_emlrtRTEI);
+            yR_data = yR->data;
+            nrows = ytry->size[0];
+            for (i = 0; i < nrows; i++) {
+              yR_data[i] = ytry_data[i];
+            }
+            absx = vR;
+            vR = vtry;
+            vtry = absx;
+            if (lastmoved == 'R') {
+              absx = 0.5 * vL;
+              if (muDoubleScalarAbs(absx) >= 2.2250738585072014E-308) {
+                vL = absx;
+              }
+            }
+            lastmoved = 'R';
+          } else {
+            absx = tL;
+            tL = ttry;
+            ttry = absx;
+            absx = vL;
+            vL = vtry;
+            vtry = absx;
+            if (lastmoved == 'L') {
+              absx = 0.5 * vR;
+              if (muDoubleScalarAbs(absx) >= 2.2250738585072014E-308) {
+                vR = absx;
+              }
+            }
+            lastmoved = 'L';
+          }
+          guard1 = false;
+        }
+      } else {
+        guard1 = true;
+        exitg1 = 1;
+      }
+    } else {
+      guard1 = true;
+      exitg1 = 1;
+    }
+  } while (exitg1 == 0);
+  if (guard1 && (lastmoved != 'N')) {
+    emlrtErrorWithMessageIdR2018a(sp, &k_emlrtRTEI, "MATLAB:odezero:LostEvent",
+                                  "MATLAB:odezero:LostEvent", 0);
+  }
+  emxFree_real_T(sp, &b);
+  emxFree_real_T(sp, &ytry);
+  emxFree_real_T(sp, &yR);
+  emlrtHeapReferenceStackLeaveFcnR2012b((emlrtConstCTX)sp);
+}
+
+void odezero(const emlrtStack *sp, real_T v, real_T t, const emxArray_real_T *y,
+             real_T tnew, const emxArray_real_T *ynew, real_T t0, real_T h,
+             const emxArray_real_T *f, int32_T *nout, emxArray_real_T *tout,
+             emxArray_real_T *yout, emxArray_int32_T *iout, real_T *vnew,
+             boolean_T *stop)
+{
+  emlrtStack b_st;
+  emlrtStack c_st;
+  emlrtStack d_st;
+  emlrtStack st;
+  emxArray_real_T *b;
+  emxArray_real_T *yR;
+  emxArray_real_T *ytry;
+  const real_T *y_data;
+  const real_T *ynew_data;
+  real_T absx;
+  real_T delta;
+  real_T tL;
+  real_T tR;
+  real_T tdir;
+  real_T tol;
+  real_T tol_tmp;
+  real_T ttry;
+  real_T vL;
+  real_T vR;
+  real_T vtry;
+  real_T *yR_data;
+  real_T *yout_data;
+  real_T *ytry_data;
+  int32_T i;
+  int32_T nrows;
+  int32_T *iout_data;
+  char_T lastmoved;
+  boolean_T guard1 = false;
+  st.prev = sp;
+  st.tls = sp->tls;
+  b_st.prev = &st;
+  b_st.tls = st.tls;
+  c_st.prev = &b_st;
+  c_st.tls = b_st.tls;
+  d_st.prev = &c_st;
+  d_st.tls = c_st.tls;
+  ynew_data = ynew->data;
+  y_data = y->data;
+  emlrtHeapReferenceStackEnterFcnR2012b((emlrtConstCTX)sp);
+  *nout = 0;
+  tout->size[0] = 1;
+  tout->size[1] = 0;
+  yout->size[0] = y->size[0];
+  yout->size[1] = 0;
+  iout->size[0] = 1;
+  iout->size[1] = 0;
+  absx = muDoubleScalarAbs(t);
+  if (muDoubleScalarIsInf(absx) || muDoubleScalarIsNaN(absx)) {
+    delta = rtNaN;
+  } else if (absx < 4.4501477170144028E-308) {
+    delta = 4.94065645841247E-324;
+  } else {
+    frexp(absx, &nrows);
+    delta = ldexp(1.0, nrows - 53);
+  }
+  absx = muDoubleScalarAbs(tnew);
+  if (muDoubleScalarIsInf(absx) || muDoubleScalarIsNaN(absx)) {
+    absx = rtNaN;
+  } else if (absx < 4.4501477170144028E-308) {
+    absx = 4.94065645841247E-324;
+  } else {
+    frexp(absx, &i);
+    absx = ldexp(1.0, i - 53);
+  }
+  tol_tmp = tnew - t;
+  tol = muDoubleScalarMin(128.0 * muDoubleScalarMax(delta, absx),
+                          muDoubleScalarAbs(tol_tmp));
+  tdir = muDoubleScalarSign(tol_tmp);
+  *stop = false;
+  tL = t;
+  vL = v;
+  st.site = &pe_emlrtRSI;
+  b_st.site = &jd_emlrtRSI;
+  *vnew = stopfunc(&b_st, ynew);
+  tR = tnew;
+  emxInit_real_T(sp, &yR, 1, &qc_emlrtRTEI);
+  i = yR->size[0];
+  yR->size[0] = ynew->size[0];
+  emxEnsureCapacity_real_T(sp, yR, i, &qc_emlrtRTEI);
+  yR_data = yR->data;
+  nrows = ynew->size[0];
+  for (i = 0; i < nrows; i++) {
+    yR_data[i] = ynew_data[i];
+  }
+  vR = *vnew;
+  vtry = 0.0;
+  ttry = tnew;
+  lastmoved = 'N';
+  emxInit_real_T(sp, &ytry, 1, &sc_emlrtRTEI);
+  emxInit_real_T(sp, &b, 1, &vc_emlrtRTEI);
+  guard1 = false;
+  real_T d;
+  int32_T exitg1;
+  do {
+    exitg1 = 0;
+    d = muDoubleScalarSign(vL);
+    if (d != muDoubleScalarSign(vR)) {
+      absx = vR - vL;
+      if (0.0 * absx >= 0.0) {
+        delta = tR - tL;
+        tol_tmp = muDoubleScalarAbs(delta);
+        if (tol_tmp <= tol) {
+          st.site = &ue_emlrtRSI;
+          i = tout->size[0] * tout->size[1];
+          tout->size[0] = 1;
+          tout->size[1] = 1;
+          emxEnsureCapacity_real_T(&st, tout, i, &rc_emlrtRTEI);
+          ytry_data = tout->data;
+          b_st.site = &ff_emlrtRSI;
+          st.site = &ve_emlrtRSI;
+          nrows = y->size[0];
+          i = yout->size[0] * yout->size[1];
+          yout->size[0] = y->size[0];
+          yout->size[1] = 1;
+          emxEnsureCapacity_real_T(&st, yout, i, &wb_emlrtRTEI);
+          yout_data = yout->data;
+          b_st.site = &ff_emlrtRSI;
+          for (i = 0; i < nrows; i++) {
+            yout_data[i] = 0.0;
+          }
+          b_st.site = &gf_emlrtRSI;
+          if (y->size[0] > 2147483646) {
+            c_st.site = &od_emlrtRSI;
+            check_forloop_overflow_error(&c_st);
+          }
+          st.site = &we_emlrtRSI;
+          i = iout->size[0] * iout->size[1];
+          iout->size[0] = 1;
+          iout->size[1] = 1;
+          emxEnsureCapacity_int32_T(&st, iout, i, &tc_emlrtRTEI);
+          iout_data = iout->data;
+          b_st.site = &ff_emlrtRSI;
+          st.site = &xe_emlrtRSI;
+          ytry_data[0] = tR;
+          iout_data[0] = 1;
+          nrows = yR->size[0];
+          for (i = 0; i < nrows; i++) {
+            yout_data[i] = yR_data[i];
+          }
+          *nout = 1;
+          st.site = &ye_emlrtRSI;
+          b_st.site = &hf_emlrtRSI;
+          *stop = (tL != t0);
+          exitg1 = 1;
+        } else {
+          real_T b_b[14];
+          boolean_T guard2 = false;
+          guard2 = false;
+          if (tL == t) {
+            st.site = &qe_emlrtRSI;
+            if ((vL == 0.0) && (vR != 0.0)) {
+              ttry = tL + tdir * 0.5 * tol;
+            } else {
+              guard2 = true;
+            }
+          } else {
+            guard2 = true;
+          }
+          if (guard2) {
+            real_T change;
+            change = 1.0;
+            st.site = &re_emlrtRSI;
+            if (vL == 0.0) {
+              if ((tdir * ttry > tdir * tR) && (vtry != vR)) {
+                absx = 1.0 - vR * (ttry - tR) / ((vtry - vR) * delta);
+                if ((absx < 0.0) || (absx > 1.0)) {
+                  absx = 0.5;
+                }
+              } else {
+                absx = 0.5;
+              }
+            } else if (vR == 0.0) {
+              if ((tdir * ttry < tdir * tL) && (vtry != vL)) {
+                absx = vL * (tL - ttry) / ((vtry - vL) * delta);
+                if ((absx < 0.0) || (absx > 1.0)) {
+                  absx = 0.5;
+                }
+              } else {
+                absx = 0.5;
+              }
+            } else {
+              absx = -vL / absx;
+            }
+            if (absx < 1.0) {
+              change = absx;
+            }
+            change *= tol_tmp;
+            change = muDoubleScalarMax(
+                0.5 * tol, muDoubleScalarMin(change, tol_tmp - 0.5 * tol));
+            ttry = tL + tdir * change;
+          }
+          st.site = &se_emlrtRSI;
+          i = ytry->size[0];
+          ytry->size[0] = y->size[0];
+          emxEnsureCapacity_real_T(&st, ytry, i, &sc_emlrtRTEI);
+          ytry_data = ytry->data;
+          nrows = y->size[0];
+          for (i = 0; i < nrows; i++) {
+            ytry_data[i] = y_data[i];
+          }
+          b_st.site = &af_emlrtRSI;
+          absx = (ttry - t) / h;
+          delta = absx * absx;
+          for (i = 0; i < 14; i++) {
+            b_b[i] = ((((((dv1[i] * absx + dv2[i]) * absx + dv3[i]) * absx +
+                         dv4[i]) *
+                            absx +
+                        dv5[i]) *
+                           absx +
+                       dv6[i]) *
+                          absx +
+                      dv7[i]) *
+                     delta;
+          }
+          b_b[0] += absx;
+          c_st.site = &bf_emlrtRSI;
+          d_st.site = &cf_emlrtRSI;
+          mtimes(&d_st, f, b_b, b);
+          yout_data = b->data;
+          if (y->size[0] == b->size[0]) {
+            nrows = y->size[0];
+            for (i = 0; i < nrows; i++) {
+              ytry_data[i] = y_data[i] + h * yout_data[i];
+            }
+          } else {
+            g_binary_expand_op(ytry, y, h, b);
+            ytry_data = ytry->data;
+          }
+          st.site = &te_emlrtRSI;
+          b_st.site = &jd_emlrtRSI;
+          vtry = stopfunc(&b_st, ytry);
+          if ((d != muDoubleScalarSign(vtry)) && (0.0 * (vtry - vL) >= 0.0)) {
+            absx = tR;
+            tR = ttry;
+            ttry = absx;
+            i = yR->size[0];
+            yR->size[0] = ytry->size[0];
+            emxEnsureCapacity_real_T(sp, yR, i, &uc_emlrtRTEI);
+            yR_data = yR->data;
+            nrows = ytry->size[0];
+            for (i = 0; i < nrows; i++) {
+              yR_data[i] = ytry_data[i];
+            }
+            absx = vR;
+            vR = vtry;
+            vtry = absx;
+            if (lastmoved == 'R') {
+              absx = 0.5 * vL;
+              if (muDoubleScalarAbs(absx) >= 2.2250738585072014E-308) {
+                vL = absx;
+              }
+            }
+            lastmoved = 'R';
+          } else {
+            absx = tL;
+            tL = ttry;
+            ttry = absx;
+            absx = vL;
+            vL = vtry;
+            vtry = absx;
+            if (lastmoved == 'L') {
+              absx = 0.5 * vR;
+              if (muDoubleScalarAbs(absx) >= 2.2250738585072014E-308) {
+                vR = absx;
+              }
+            }
+            lastmoved = 'L';
+          }
+          guard1 = false;
+        }
+      } else {
+        guard1 = true;
+        exitg1 = 1;
+      }
+    } else {
+      guard1 = true;
+      exitg1 = 1;
+    }
+  } while (exitg1 == 0);
+  if (guard1 && (lastmoved != 'N')) {
+    emlrtErrorWithMessageIdR2018a(sp, &k_emlrtRTEI, "MATLAB:odezero:LostEvent",
+                                  "MATLAB:odezero:LostEvent", 0);
+  }
+  emxFree_real_T(sp, &b);
+  emxFree_real_T(sp, &ytry);
+  emxFree_real_T(sp, &yR);
+  emlrtHeapReferenceStackLeaveFcnR2012b((emlrtConstCTX)sp);
+}
+
+/* End of code generation (odezero.c) */

@@ -1,0 +1,25 @@
+LIBRARY objfun_S_time_mex.mexw64
+EXPORTS
+mexFunction
+mexfilerequiredapiversion
+emlrtMexFcnProperties
+objfun_S_time
+objfun_S_time_initialize
+objfun_S_time_terminate
+objfun_S_time_atexit
+b_emlrt_marshallOut
+emxEnsureCapacity_int32_T
+emxFree_int32_T
+emxInit_int32_T
+emxEnsureCapacity_char_T
+emxFreeStruct_struct2_T
+emxFree_char_T
+emxFreeStruct_struct1_T
+emxFreeStruct_struct0_T
+emxFree_real_T
+emxInitStruct_struct2_T
+emxInit_char_T
+emxInitStruct_struct1_T
+emxInitStruct_struct0_T
+emxInit_real_T
+emxEnsureCapacity_real_T
