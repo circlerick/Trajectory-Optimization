@@ -1,0 +1,20 @@
+LIBRARY objfunSTM_S_time_mex.mexw64
+EXPORTS
+mexFunction
+mexfilerequiredapiversion
+emlrtMexFcnProperties
+objfunSTM_S_time
+objfunSTM_S_time_initialize
+objfunSTM_S_time_terminate
+objfunSTM_S_time_atexit
+emxEnsureCapacity_int32_T
+emxFree_int32_T
+emxInit_int32_T
+emxEnsureCapacity_char_T
+emxEnsureCapacity_real_T
+emxFreeStruct_struct2_T
+emxFree_real_T
+emxFree_char_T
+emxInitStruct_struct2_T
+emxInit_char_T
+emxInit_real_T
