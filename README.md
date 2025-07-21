@@ -26,19 +26,21 @@ In the second part, the **Neighboring Optimal Guidance (NOG)** algorithm is impl
 
 ## 2. Code Structure
 
-The project is organized into three main modules:
+The project is organized into three main modules that are available in the 'MATLAB-Script' baranch (which also contains most of the MATLAB code). Additionally, 'C-Code' contains the code generated using MATLAB's coder toolbox, along with its dedicated script in 'codegen-script'. 'solutions' is a collection of variables and costate values that can be used to reproduce sample solution that were found during the thesis work. A brief summary of the code structure is presented below:
 
 ### 'Main_3BP' – Problem Setup
-- Initializes mission parameters and defines the equations of motion derived from the system's Hamiltonian.
+- Mission and spacecraft parameters are defined.
+- Initializes the problem type and defines the equations of motion derived from the system's Hamiltonian.
 - Symbolic expressions are converted into efficient MATLAB scripts for performance and compatibility with MATLAB Coder.
 
 ### 'Main_Extremal' – Trajectory Optimization
 - Solves the trajectory optimization using global (PSO) and local (Newtonian) methods.
 - Includes functions like:
   - 'objfun_S', 'objfunSTM_S': compute trajectories from a given costate.
-  - '.mex' C-coded versions for performance.
+  - '_mex' C-coded versions for performance.
 - Supports three problem classes: minimum-time, minimum-energy, and minimum-fuel.
 - Contains the 'homotopy' function to perform thrust continuation.
+- Has the possibility to plot the trajectory or a multitude of important variables
 
 ### 'Main_Suff' – Neighboring Optimal Guidance
 - Verifies second-order optimality conditions.
