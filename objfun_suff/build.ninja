@@ -1,0 +1,82 @@
+# CompilerName=mingw64
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root/build/win64
+matlabdir = C:/Program Files/MATLAB/R2022b
+startdir = E:/Users/ricca/Desktop/codegen code
+
+# Toolchain information
+cc = C:\ProgramData\MATLAB\SupportPackages\R2022b\3P.instrset\mingw_w64.instrset\bin\gcc
+cxx = C:\ProgramData\MATLAB\SupportPackages\R2022b\3P.instrset\mingw_w64.instrset\bin\g++
+linker = C:\ProgramData\MATLAB\SupportPackages\R2022b\3P.instrset\mingw_w64.instrset\bin\gcc
+linkerxx = C:\ProgramData\MATLAB\SupportPackages\R2022b\3P.instrset\mingw_w64.instrset\bin\g++
+
+cflags =  -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I "E:\Users\ricca\Desktop\codegen code\codegen\mex\objfun_suff" -I "E:\Users\ricca\Desktop\codegen code" -I "E:\Users\ricca\Desktop\codegen code\codegen\mex\objfun_suff\interface" -I "C:\Program Files\MATLAB\R2022b\extern\include" -I "." -DMODEL=objfun_suff_mex -D__USE_MINGW_ANSI_STDIO=1  
+
+cxxflags =  -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I "E:\Users\ricca\Desktop\codegen code\codegen\mex\objfun_suff" -I "E:\Users\ricca\Desktop\codegen code" -I "E:\Users\ricca\Desktop\codegen code\codegen\mex\objfun_suff\interface" -I "C:\Program Files\MATLAB\R2022b\extern\include" -I "." -DMODEL=objfun_suff_mex -D__USE_MINGW_ANSI_STDIO=1  
+
+ldflags =  -m64 -Wl,--no-undefined -shared -static -L"C:\Program Files\MATLAB\R2022b\extern\lib\win64\mingw64" -llibmx -llibmex -llibmat -lm -llibmwlapack -llibmwblas -o "objfun_suff_mex.mexw64" -L"$matlabdir\extern\lib\win64\mingw64" -llibmwblas -llibemlrt -llibcovrt -llibut -llibmwmathutil  objfun_suff_mex.def
+
+linkobjs = 
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in -o $out
+
+rule cxx
+    command = $cxx $cxxflags $in -o $out
+
+rule link
+    command = $linker @$out.rsp $linkobjs $ldflags
+    rspfile = $out.rsp
+    rspfile_content = $in
+
+rule linkxx
+    command = $linkerxx $in $linkobjs $ldflags
+
+# Build
+build $builddir/objfun_suff_data.o : cc $root/objfun_suff_data.c
+build $builddir/rt_nonfinite.o : cc $root/rt_nonfinite.c
+build $builddir/objfun_suff_initialize.o : cc $root/objfun_suff_initialize.c
+build $builddir/objfun_suff_terminate.o : cc $root/objfun_suff_terminate.c
+build $builddir/objfun_suff.o : cc $root/objfun_suff.c
+build $builddir/Switching_Function.o : cc $root/Switching_Function.c
+build $builddir/ode89.o : cc $root/ode89.c
+build $builddir/indexShapeCheck.o : cc $root/indexShapeCheck.c
+build $builddir/assertValidSizeArg.o : cc $root/assertValidSizeArg.c
+build $builddir/HamiltonianFirstDerivatives.o : cc $root/HamiltonianFirstDerivatives.c
+build $builddir/H0_x_fun.o : cc $root/H0_x_fun.c
+build $builddir/H0_p_fun.o : cc $root/H0_p_fun.c
+build $builddir/S_x_fun.o : cc $root/S_x_fun.c
+build $builddir/S_p_fun.o : cc $root/S_p_fun.c
+build $builddir/HamiltonianSecondDerivatives.o : cc $root/HamiltonianSecondDerivatives.c
+build $builddir/H0_xx_fun.o : cc $root/H0_xx_fun.c
+build $builddir/H0_xp_fun.o : cc $root/H0_xp_fun.c
+build $builddir/S_xx_fun.o : cc $root/S_xx_fun.c
+build $builddir/S_pp_fun.o : cc $root/S_pp_fun.c
+build $builddir/S_xp_fun.o : cc $root/S_xp_fun.c
+build $builddir/eml_mtimes_helper.o : cc $root/eml_mtimes_helper.c
+build $builddir/mtimes.o : cc $root/mtimes.c
+build $builddir/S_fun.o : cc $root/S_fun.c
+build $builddir/stopfuel.o : cc $root/stopfuel.c
+build $builddir/eps.o : cc $root/eps.c
+build $builddir/num2str.o : cc $root/num2str.c
+build $builddir/warning.o : cc $root/warning.c
+build $builddir/odezero.o : cc $root/odezero.c
+build $builddir/ntrp89.o : cc $root/ntrp89.c
+build $builddir/derivatives.o : cc $root/derivatives.c
+build $builddir/reshapeSizeChecks.o : cc $root/reshapeSizeChecks.c
+build $builddir/_coder_objfun_suff_api.o : cc $root/interface/_coder_objfun_suff_api.c
+build $builddir/_coder_objfun_suff_mex.o : cc $root/interface/_coder_objfun_suff_mex.c
+build $builddir/explicitRungeKutta.o : cc $root/explicitRungeKutta.c
+build $builddir/derivativesSTM_suff.o : cc $root/derivativesSTM_suff.c
+build $builddir/function_handle.o : cc $root/function_handle.c
+build $builddir/objfun_suff_emxutil.o : cc $root/objfun_suff_emxutil.c
+build $builddir/_coder_objfun_suff_info.o : cc $root/interface/_coder_objfun_suff_info.c
+build $builddir/c_mexapi_version.o : cc $matlabdir/extern/version/c_mexapi_version.c
+
+# Link
+build $root\objfun_suff_mex.mexw64 : link $builddir/objfun_suff_data.o $builddir/rt_nonfinite.o $builddir/objfun_suff_initialize.o $builddir/objfun_suff_terminate.o $builddir/objfun_suff.o $builddir/Switching_Function.o $builddir/ode89.o $builddir/indexShapeCheck.o $builddir/assertValidSizeArg.o $builddir/HamiltonianFirstDerivatives.o $builddir/H0_x_fun.o $builddir/H0_p_fun.o $builddir/S_x_fun.o $builddir/S_p_fun.o $builddir/HamiltonianSecondDerivatives.o $builddir/H0_xx_fun.o $builddir/H0_xp_fun.o $builddir/S_xx_fun.o $builddir/S_pp_fun.o $builddir/S_xp_fun.o $builddir/eml_mtimes_helper.o $builddir/mtimes.o $builddir/S_fun.o $builddir/stopfuel.o $builddir/eps.o $builddir/num2str.o $builddir/warning.o $builddir/odezero.o $builddir/ntrp89.o $builddir/derivatives.o $builddir/reshapeSizeChecks.o $builddir/_coder_objfun_suff_api.o $builddir/_coder_objfun_suff_mex.o $builddir/explicitRungeKutta.o $builddir/derivativesSTM_suff.o $builddir/function_handle.o $builddir/objfun_suff_emxutil.o $builddir/_coder_objfun_suff_info.o $builddir/c_mexapi_version.o 
