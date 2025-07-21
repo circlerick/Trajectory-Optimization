@@ -1,0 +1,170 @@
+[
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   objfun_S_fuel_data.c -o build/win64/objfun_S_fuel_data.o",
+    "file": "objfun_S_fuel_data.c",
+    "output": "build/win64/objfun_S_fuel_data.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   rt_nonfinite.c -o build/win64/rt_nonfinite.o",
+    "file": "rt_nonfinite.c",
+    "output": "build/win64/rt_nonfinite.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   objfun_S_fuel_initialize.c -o build/win64/objfun_S_fuel_initialize.o",
+    "file": "objfun_S_fuel_initialize.c",
+    "output": "build/win64/objfun_S_fuel_initialize.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   objfun_S_fuel_terminate.c -o build/win64/objfun_S_fuel_terminate.o",
+    "file": "objfun_S_fuel_terminate.c",
+    "output": "build/win64/objfun_S_fuel_terminate.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   objfun_S_fuel.c -o build/win64/objfun_S_fuel.o",
+    "file": "objfun_S_fuel.c",
+    "output": "build/win64/objfun_S_fuel.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   ode89.c -o build/win64/ode89.o",
+    "file": "ode89.c",
+    "output": "build/win64/ode89.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   HamiltonianFirstDerivatives.c -o build/win64/HamiltonianFirstDerivatives.o",
+    "file": "HamiltonianFirstDerivatives.c",
+    "output": "build/win64/HamiltonianFirstDerivatives.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   H0_x_fun.c -o build/win64/H0_x_fun.o",
+    "file": "H0_x_fun.c",
+    "output": "build/win64/H0_x_fun.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   H0_p_fun.c -o build/win64/H0_p_fun.o",
+    "file": "H0_p_fun.c",
+    "output": "build/win64/H0_p_fun.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   S_x_fun.c -o build/win64/S_x_fun.o",
+    "file": "S_x_fun.c",
+    "output": "build/win64/S_x_fun.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   S_p_fun.c -o build/win64/S_p_fun.o",
+    "file": "S_p_fun.c",
+    "output": "build/win64/S_p_fun.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   Switching_Function.c -o build/win64/Switching_Function.o",
+    "file": "Switching_Function.c",
+    "output": "build/win64/Switching_Function.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   stopfuel.c -o build/win64/stopfuel.o",
+    "file": "stopfuel.c",
+    "output": "build/win64/stopfuel.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   eps.c -o build/win64/eps.o",
+    "file": "eps.c",
+    "output": "build/win64/eps.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   num2str.c -o build/win64/num2str.o",
+    "file": "num2str.c",
+    "output": "build/win64/num2str.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   warning.c -o build/win64/warning.o",
+    "file": "warning.c",
+    "output": "build/win64/warning.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   odezero.c -o build/win64/odezero.o",
+    "file": "odezero.c",
+    "output": "build/win64/odezero.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   ntrp89.c -o build/win64/ntrp89.o",
+    "file": "ntrp89.c",
+    "output": "build/win64/ntrp89.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   interface/_coder_objfun_S_fuel_api.c -o build/win64/_coder_objfun_S_fuel_api.o",
+    "file": "interface/_coder_objfun_S_fuel_api.c",
+    "output": "build/win64/_coder_objfun_S_fuel_api.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   interface/_coder_objfun_S_fuel_mex.c -o build/win64/_coder_objfun_S_fuel_mex.o",
+    "file": "interface/_coder_objfun_S_fuel_mex.c",
+    "output": "build/win64/_coder_objfun_S_fuel_mex.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   sumMatrixIncludeNaN.c -o build/win64/sumMatrixIncludeNaN.o",
+    "file": "sumMatrixIncludeNaN.c",
+    "output": "build/win64/sumMatrixIncludeNaN.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   explicitRungeKutta.c -o build/win64/explicitRungeKutta.o",
+    "file": "explicitRungeKutta.c",
+    "output": "build/win64/explicitRungeKutta.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   eml_mtimes_helper.c -o build/win64/eml_mtimes_helper.o",
+    "file": "eml_mtimes_helper.c",
+    "output": "build/win64/eml_mtimes_helper.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   function_handle.c -o build/win64/function_handle.o",
+    "file": "function_handle.c",
+    "output": "build/win64/function_handle.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   objfun_S_fuel_emxutil.c -o build/win64/objfun_S_fuel_emxutil.o",
+    "file": "objfun_S_fuel_emxutil.c",
+    "output": "build/win64/objfun_S_fuel_emxutil.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   objfun_S_fuel_mexutil.c -o build/win64/objfun_S_fuel_mexutil.o",
+    "file": "objfun_S_fuel_mexutil.c",
+    "output": "build/win64/objfun_S_fuel_mexutil.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   interface/_coder_objfun_S_fuel_info.c -o build/win64/_coder_objfun_S_fuel_info.o",
+    "file": "interface/_coder_objfun_S_fuel_info.c",
+    "output": "build/win64/_coder_objfun_S_fuel_info.o"
+  },
+  {
+    "directory": "E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2022b\\3P.instrset\\mingw_w64.instrset\\bin\\gcc -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\" -I \"E:\\Users\\ricca\\Desktop\\codegen code\\codegen\\mex\\objfun_S_fuel\\interface\" -I \"C:\\Program Files\\MATLAB\\R2022b\\extern\\include\" -I \".\" -DMODEL=objfun_S_fuel_mex -D__USE_MINGW_ANSI_STDIO=1   \"C:/Program Files/MATLAB/R2022b/extern/version/c_mexapi_version.c\" -o build/win64/c_mexapi_version.o",
+    "file": "C:/Program Files/MATLAB/R2022b/extern/version/c_mexapi_version.c",
+    "output": "build/win64/c_mexapi_version.o"
+  }
+]

@@ -1,0 +1,183 @@
+/*
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
+ * Switching_Function.c
+ *
+ * Code generation for function 'Switching_Function'
+ *
+ */
+
+/* Include files */
+#include "Switching_Function.h"
+#include "HamiltonianFirstDerivatives.h"
+#include "S_p_fun.h"
+#include "S_x_fun.h"
+#include "objfun_S_fuel_data.h"
+#include "objfun_S_fuel_emxutil.h"
+#include "objfun_S_fuel_types.h"
+#include "rt_nonfinite.h"
+#include "mwmathutil.h"
+
+/* Variable Definitions */
+static emlrtRSInfo pc_emlrtRSI = {
+    22,                   /* lineNo */
+    "Switching_Function", /* fcnName */
+    "E:\\Users\\ricca\\Desktop\\codegen code\\Switching_Function.m" /* pathName
+                                                                     */
+};
+
+static emlrtRSInfo qc_emlrtRSI = {
+    23,                   /* lineNo */
+    "Switching_Function", /* fcnName */
+    "E:\\Users\\ricca\\Desktop\\codegen code\\Switching_Function.m" /* pathName
+                                                                     */
+};
+
+static emlrtRSInfo rc_emlrtRSI = {
+    24,                   /* lineNo */
+    "Switching_Function", /* fcnName */
+    "E:\\Users\\ricca\\Desktop\\codegen code\\Switching_Function.m" /* pathName
+                                                                     */
+};
+
+static emlrtBCInfo xb_emlrtBCI = {
+    -1,                                                 /* iFirst */
+    -1,                                                 /* iLast */
+    11,                                                 /* lineNo */
+    10,                                                 /* colNo */
+    "in1",                                              /* aName */
+    "S_fun",                                            /* fName */
+    "E:\\Users\\ricca\\Desktop\\codegen code\\S_fun.m", /* pName */
+    0                                                   /* checkKind */
+};
+
+static emlrtBCInfo yb_emlrtBCI = {
+    -1,                                                 /* iFirst */
+    -1,                                                 /* iLast */
+    10,                                                 /* lineNo */
+    10,                                                 /* colNo */
+    "in2",                                              /* aName */
+    "S_fun",                                            /* fName */
+    "E:\\Users\\ricca\\Desktop\\codegen code\\S_fun.m", /* pName */
+    0                                                   /* checkKind */
+};
+
+static emlrtBCInfo ac_emlrtBCI = {
+    -1,                                                 /* iFirst */
+    -1,                                                 /* iLast */
+    9,                                                  /* lineNo */
+    10,                                                 /* colNo */
+    "in2",                                              /* aName */
+    "S_fun",                                            /* fName */
+    "E:\\Users\\ricca\\Desktop\\codegen code\\S_fun.m", /* pName */
+    0                                                   /* checkKind */
+};
+
+static emlrtBCInfo bc_emlrtBCI = {
+    -1,                                                 /* iFirst */
+    -1,                                                 /* iLast */
+    8,                                                  /* lineNo */
+    10,                                                 /* colNo */
+    "in2",                                              /* aName */
+    "S_fun",                                            /* fName */
+    "E:\\Users\\ricca\\Desktop\\codegen code\\S_fun.m", /* pName */
+    0                                                   /* checkKind */
+};
+
+static emlrtRTEInfo jb_emlrtRTEI = {
+    2,                                                              /* lineNo */
+    22,                                                             /* colNo */
+    "Switching_Function",                                           /* fName */
+    "E:\\Users\\ricca\\Desktop\\codegen code\\Switching_Function.m" /* pName */
+};
+
+/* Function Definitions */
+void Switching_Function(const emlrtStack *sp, const real_T x_data[],
+                        int32_T x_size, const real_T p_data[], int32_T p_size,
+                        real_T physical_Tmax, real_T physical_c,
+                        real_T physical_NSTATE, real_T physical_shoot,
+                        real_T physical_EPS, real_T *S, real_T *Sd)
+{
+  emlrtStack b_st;
+  emlrtStack st;
+  emxArray_real_T *H_p;
+  emxArray_real_T *H_x;
+  real_T S_p[5];
+  real_T S_x[5];
+  real_T t2;
+  real_T x;
+  real_T *H_p_data;
+  real_T *H_x_data;
+  int32_T i;
+  st.prev = sp;
+  st.tls = sp->tls;
+  b_st.prev = &st;
+  b_st.tls = st.tls;
+  emlrtHeapReferenceStackEnterFcnR2012b((emlrtConstCTX)sp);
+  /*  Computes switching Function and its derivatives */
+  /*  Definition of the Switching function and its derivatives with evaluation
+   * of the */
+  /*  matlabFunction S_fun, S_x_fun, S_p_fun, S_xx_fun, S_pp_fun, S_xp_fun */
+  /*  Input: */
+  /*  x: state vector [NSTATEx1] */
+  /*  p: costate vector [NSTATEx1] */
+  /*  physical: structure of physical variables and functions */
+  /*  Output: */
+  /*  S: switching function */
+  /*  Sd: switching function first derivatives */
+  /*  Sdd: switching function second derivatives */
+  st.site = &e_emlrtRSI;
+  /* S_fun */
+  /*     Ssym = S_fun(IN1,IN2,Tsym,CSYM,EPSsym) */
+  /*     This function was generated by the Symbolic Math Toolbox version 9.2.
+   */
+  /*     01-Sep-2024 17:26:08 */
+  if (p_size < 3) {
+    emlrtDynamicBoundsCheckR2012b(3, 1, p_size, &bc_emlrtBCI, &st);
+  }
+  if (p_size < 4) {
+    emlrtDynamicBoundsCheckR2012b(4, 1, 3, &ac_emlrtBCI, &st);
+  }
+  if (p_size < 5) {
+    emlrtDynamicBoundsCheckR2012b(5, 1, 4, &yb_emlrtBCI, &st);
+  }
+  if (x_size < 5) {
+    emlrtDynamicBoundsCheckR2012b(5, 1, x_size, &xb_emlrtBCI, &st);
+  }
+  t2 = 1.0 / physical_c;
+  b_st.site = &f_emlrtRSI;
+  x = p_data[2] * p_data[2] + p_data[3] * p_data[3];
+  if (x < 0.0) {
+    emlrtErrorWithMessageIdR2018a(
+        &b_st, &emlrtRTEI, "Coder:toolbox:ElFunDomainError",
+        "Coder:toolbox:ElFunDomainError", 3, 4, 4, "sqrt");
+  }
+  x = muDoubleScalarSqrt(x);
+  *S = -physical_Tmax * ((t2 + p_data[4] * t2) - x / x_data[4]);
+  st.site = &pc_emlrtRSI;
+  S_x_fun(&st, x_data, x_size, p_data, p_size, physical_Tmax, S_x);
+  st.site = &qc_emlrtRSI;
+  S_p_fun(&st, x_data, x_size, p_data, p_size, physical_Tmax, physical_c, S_p);
+  emxInit_real_T(sp, &H_x, 1, &jb_emlrtRTEI);
+  emxInit_real_T(sp, &H_p, 1, &jb_emlrtRTEI);
+  st.site = &rc_emlrtRSI;
+  HamiltonianFirstDerivatives(&st, x_data, x_size, p_data, p_size, *S,
+                              physical_Tmax, physical_c, physical_NSTATE,
+                              physical_shoot, physical_EPS, H_x, H_p);
+  H_p_data = H_p->data;
+  H_x_data = H_x->data;
+  t2 = 0.0;
+  x = 0.0;
+  for (i = 0; i < 5; i++) {
+    t2 += S_x[i] * H_p_data[i];
+    x += S_p[i] * H_x_data[i];
+  }
+  emxFree_real_T(sp, &H_p);
+  emxFree_real_T(sp, &H_x);
+  *Sd = t2 - x;
+  emlrtHeapReferenceStackLeaveFcnR2012b((emlrtConstCTX)sp);
+}
+
+/* End of code generation (Switching_Function.c) */
