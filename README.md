@@ -1,7 +1,7 @@
 # Trajectory-Optimization
 Space Engineering Master's Thesis - https://www.researchgate.net/publication/386552265_Trajectory_optimization_and_optimal_guidance_in_the_restricted_three-body_problem
 
-- 1) Thesis Description
+- 1) Thesis Description:
 The code of this project is the result of a Master's Thesis in Space Engineering at Politecnico di Milano. 
 
 The main objective of the first parto of the Thesis is to develop an algorithm capable of solving the trajectory optimization problem for space applications. More specifically, the problem considered is an orbital transfer between the Earth and the Moon for a low thrust spacecraft equipped with an elecrtic engine. Due to the peculiarities of this technology, a technique based on the Maximum Principle of Pontrjagin (PMP) is adopted to find the optimal thrust pointing direction for the spacecraft during the orbital transfer. A global optimization technique, Particle Swarm Optimization (PSW) algorithm, is used to find an initial value of the costate (needed to solve the PMP). Then, the solution is refined using local optimization techniques based on Newtonian methods. The problem is studied in the physical context of the Restricted Three-Body Problem. 
@@ -10,7 +10,7 @@ The second part of the thesis consists in the formulation of a Neighboring Optim
 
 Additionally, an homotopic technique is employed to search for solution with low thrust levels. In fact, as the thrust lowers, the trajectory becomes more long and complex, and the combination of PSO and Newtonian techniques struggles to find efficiently a valid costate. This problem can be partially avoided starting form a solution for a relatively high value of Thrust-to-Initial Mass ratio, and then using that solution as an initial guess for a problem with a slightly lower initial thrust. 
 
-- 2) Code Manual
+- 2) Code Manual:
 The Project is composed of 3 macro aereas, denominated as Main_3BP, Main_Extremal and Main_Suff.
 
 The first one, Main_3BP, can be considered a sort of 'real main' of the script. Here most of the variables are initialized (as for example the parameters of the spacecraft) and the equation of motion of the problem are defined. In this part basically no mathematical calculation are performed. The equation of motion are derived from the Hamiltonian of the problem, which has to be defined by the user. After that, the equations of motion are derived with symbolic manipulation as 'Function Handle' functions. Then they are converted into a common script. This last operation is done for double purposes: function handles are typically slower to run than a script with mathematical exrpressions, and they cannot be converted into C-code using the MATLAB Coder application.
