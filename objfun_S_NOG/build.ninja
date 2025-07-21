@@ -1,0 +1,93 @@
+# CompilerName=mingw64
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root/build/win64
+matlabdir = C:/Program Files/MATLAB/R2022b
+startdir = E:/Users/ricca/Desktop/codegen code
+
+# Toolchain information
+cc = C:\ProgramData\MATLAB\SupportPackages\R2022b\3P.instrset\mingw_w64.instrset\bin\gcc
+cxx = C:\ProgramData\MATLAB\SupportPackages\R2022b\3P.instrset\mingw_w64.instrset\bin\g++
+linker = C:\ProgramData\MATLAB\SupportPackages\R2022b\3P.instrset\mingw_w64.instrset\bin\gcc
+linkerxx = C:\ProgramData\MATLAB\SupportPackages\R2022b\3P.instrset\mingw_w64.instrset\bin\g++
+
+cflags =  -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I "E:\Users\ricca\Desktop\codegen code\codegen\mex\objfun_S_NOG" -I "E:\Users\ricca\Desktop\codegen code" -I "E:\Users\ricca\Desktop\codegen code\codegen\mex\objfun_S_NOG\interface" -I "C:\Program Files\MATLAB\R2022b\extern\include" -I "." -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=objfun_S_NOG_mex -D__USE_MINGW_ANSI_STDIO=1  
+
+cxxflags =  -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I "E:\Users\ricca\Desktop\codegen code\codegen\mex\objfun_S_NOG" -I "E:\Users\ricca\Desktop\codegen code" -I "E:\Users\ricca\Desktop\codegen code\codegen\mex\objfun_S_NOG\interface" -I "C:\Program Files\MATLAB\R2022b\extern\include" -I "." -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=objfun_S_NOG_mex -D__USE_MINGW_ANSI_STDIO=1  
+
+ldflags =  -m64 -Wl,--no-undefined -shared -static -L"C:\Program Files\MATLAB\R2022b\extern\lib\win64\mingw64" -llibmx -llibmex -llibmat -lm -llibmwlapack -llibmwblas -o "objfun_S_NOG_mex.mexw64" -L"$matlabdir\extern\lib\win64\mingw64" -llibmwlapack -llibmwblas -llibemlrt -llibcovrt -llibut -llibmwmathutil  objfun_S_NOG_mex.def
+
+linkobjs = 
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in -o $out
+
+rule cxx
+    command = $cxx $cxxflags $in -o $out
+
+rule link
+    command = $linker @$out.rsp $linkobjs $ldflags
+    rspfile = $out.rsp
+    rspfile_content = $in
+
+rule linkxx
+    command = $linkerxx $in $linkobjs $ldflags
+
+# Build
+build $builddir/objfun_S_NOG_data.o : cc $root/objfun_S_NOG_data.c
+build $builddir/rt_nonfinite.o : cc $root/rt_nonfinite.c
+build $builddir/objfun_S_NOG_initialize.o : cc $root/objfun_S_NOG_initialize.c
+build $builddir/objfun_S_NOG_terminate.o : cc $root/objfun_S_NOG_terminate.c
+build $builddir/objfun_S_NOG.o : cc $root/objfun_S_NOG.c
+build $builddir/Switching_Function.o : cc $root/Switching_Function.c
+build $builddir/assertValidSizeArg.o : cc $root/assertValidSizeArg.c
+build $builddir/ode89.o : cc $root/ode89.c
+build $builddir/explicitRungeKutta.o : cc $root/explicitRungeKutta.c
+build $builddir/indexShapeCheck.o : cc $root/indexShapeCheck.c
+build $builddir/inv.o : cc $root/inv.c
+build $builddir/norm.o : cc $root/norm.c
+build $builddir/warning.o : cc $root/warning.c
+build $builddir/flt2str.o : cc $root/flt2str.c
+build $builddir/eml_mtimes_helper.o : cc $root/eml_mtimes_helper.c
+build $builddir/mtimes.o : cc $root/mtimes.c
+build $builddir/HamiltonianFirstDerivatives.o : cc $root/HamiltonianFirstDerivatives.c
+build $builddir/H0_x_fun.o : cc $root/H0_x_fun.c
+build $builddir/H0_p_fun.o : cc $root/H0_p_fun.c
+build $builddir/S_x_fun.o : cc $root/S_x_fun.c
+build $builddir/S_p_fun.o : cc $root/S_p_fun.c
+build $builddir/HamiltonianSecondDerivatives.o : cc $root/HamiltonianSecondDerivatives.c
+build $builddir/H0_xx_fun.o : cc $root/H0_xx_fun.c
+build $builddir/H0_xp_fun.o : cc $root/H0_xp_fun.c
+build $builddir/S_xx_fun.o : cc $root/S_xx_fun.c
+build $builddir/S_pp_fun.o : cc $root/S_pp_fun.c
+build $builddir/S_xp_fun.o : cc $root/S_xp_fun.c
+build $builddir/S_fun.o : cc $root/S_fun.c
+build $builddir/stopNOG.o : cc $root/stopNOG.c
+build $builddir/eps.o : cc $root/eps.c
+build $builddir/abs.o : cc $root/abs.c
+build $builddir/assertCompatibleDims.o : cc $root/assertCompatibleDims.c
+build $builddir/num2str.o : cc $root/num2str.c
+build $builddir/odezero.o : cc $root/odezero.c
+build $builddir/ntrp89.o : cc $root/ntrp89.c
+build $builddir/reshapeSizeChecks.o : cc $root/reshapeSizeChecks.c
+build $builddir/stopfuel.o : cc $root/stopfuel.c
+build $builddir/derivatives.o : cc $root/derivatives.c
+build $builddir/objfun_S_fuel.o : cc $root/objfun_S_fuel.c
+build $builddir/sum.o : cc $root/sum.c
+build $builddir/_coder_objfun_S_NOG_api.o : cc $root/interface/_coder_objfun_S_NOG_api.c
+build $builddir/_coder_objfun_S_NOG_mex.o : cc $root/interface/_coder_objfun_S_NOG_mex.c
+build $builddir/eml_int_forloop_overflow_check.o : cc $root/eml_int_forloop_overflow_check.c
+build $builddir/sumMatrixIncludeNaN.o : cc $root/sumMatrixIncludeNaN.c
+build $builddir/derivatives_NOG_update.o : cc $root/derivatives_NOG_update.c
+build $builddir/function_handle.o : cc $root/function_handle.c
+build $builddir/objfun_S_NOG_emxutil.o : cc $root/objfun_S_NOG_emxutil.c
+build $builddir/objfun_S_NOG_mexutil.o : cc $root/objfun_S_NOG_mexutil.c
+build $builddir/_coder_objfun_S_NOG_info.o : cc $root/interface/_coder_objfun_S_NOG_info.c
+build $builddir/c_mexapi_version.o : cc $matlabdir/extern/version/c_mexapi_version.c
+
+# Link
+build $root\objfun_S_NOG_mex.mexw64 : link $builddir/objfun_S_NOG_data.o $builddir/rt_nonfinite.o $builddir/objfun_S_NOG_initialize.o $builddir/objfun_S_NOG_terminate.o $builddir/objfun_S_NOG.o $builddir/Switching_Function.o $builddir/assertValidSizeArg.o $builddir/ode89.o $builddir/explicitRungeKutta.o $builddir/indexShapeCheck.o $builddir/inv.o $builddir/norm.o $builddir/warning.o $builddir/flt2str.o $builddir/eml_mtimes_helper.o $builddir/mtimes.o $builddir/HamiltonianFirstDerivatives.o $builddir/H0_x_fun.o $builddir/H0_p_fun.o $builddir/S_x_fun.o $builddir/S_p_fun.o $builddir/HamiltonianSecondDerivatives.o $builddir/H0_xx_fun.o $builddir/H0_xp_fun.o $builddir/S_xx_fun.o $builddir/S_pp_fun.o $builddir/S_xp_fun.o $builddir/S_fun.o $builddir/stopNOG.o $builddir/eps.o $builddir/abs.o $builddir/assertCompatibleDims.o $builddir/num2str.o $builddir/odezero.o $builddir/ntrp89.o $builddir/reshapeSizeChecks.o $builddir/stopfuel.o $builddir/derivatives.o $builddir/objfun_S_fuel.o $builddir/sum.o $builddir/_coder_objfun_S_NOG_api.o $builddir/_coder_objfun_S_NOG_mex.o $builddir/eml_int_forloop_overflow_check.o $builddir/sumMatrixIncludeNaN.o $builddir/derivatives_NOG_update.o $builddir/function_handle.o $builddir/objfun_S_NOG_emxutil.o $builddir/objfun_S_NOG_mexutil.o $builddir/_coder_objfun_S_NOG_info.o $builddir/c_mexapi_version.o 
