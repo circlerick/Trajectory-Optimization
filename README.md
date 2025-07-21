@@ -1,24 +1,74 @@
-# Trajectory-Optimization
-Space Engineering Master's Thesis - https://www.researchgate.net/publication/386552265_Trajectory_optimization_and_optimal_guidance_in_the_restricted_three-body_problem
+# Trajectory Optimization in the Restricted Three-Body Problem
 
-- 1) Thesis Description:
-The code of this project is the result of a Master's Thesis in Space Engineering at Politecnico di Milano. 
+This repository contains the code developed for my Master's Thesis in Space Engineering at Politecnico di Milano.
 
-The main objective of the first parto of the Thesis is to develop an algorithm capable of solving the trajectory optimization problem for space applications. More specifically, the problem considered is an orbital transfer between the Earth and the Moon for a low thrust spacecraft equipped with an elecrtic engine. Due to the peculiarities of this technology, a technique based on the Maximum Principle of Pontrjagin (PMP) is adopted to find the optimal thrust pointing direction for the spacecraft during the orbital transfer. A global optimization technique, Particle Swarm Optimization (PSW) algorithm, is used to find an initial value of the costate (needed to solve the PMP). Then, the solution is refined using local optimization techniques based on Newtonian methods. The problem is studied in the physical context of the Restricted Three-Body Problem. 
+**Thesis Link:**  
+[Trajectory optimization and optimal guidance in the restricted three-body problem (ResearchGate)](https://www.researchgate.net/publication/386552265_Trajectory_optimization_and_optimal_guidance_in_the_restricted_three-body_problem)
 
-The second part of the thesis consists in the formulation of a Neighboring Optimal Guidance (NOG) strategy. The NOG is used to correct small perturbations that can occur during the nominal trajectory (eg: Solar radiation pressure, non uniform thrust, ...). In this part, the code simulates a trajectory and the user can decide to insert a perturbation at a certain point of the simulation. Then, the algorithm will try to counteract the effects of the perturbation to bring back as close as possible the spacecraft to the original target. 
+---
 
-Additionally, an homotopic technique is employed to search for solution with low thrust levels. In fact, as the thrust lowers, the trajectory becomes more long and complex, and the combination of PSO and Newtonian techniques struggles to find efficiently a valid costate. This problem can be partially avoided starting form a solution for a relatively high value of Thrust-to-Initial Mass ratio, and then using that solution as an initial guess for a problem with a slightly lower initial thrust. 
+## 1. Thesis Overview
 
-- 2) Code Manual:
-The Project is composed of 3 macro aereas, denominated as Main_3BP, Main_Extremal and Main_Suff.
+The goal of this thesis is to develop and implement an algorithm for optimal trajectory design for a low-thrust spacecraft performing an Earth–Moon transfer. The spacecraft is equipped with an electric propulsion system. Due to the low thrust, the trajectory is long and complex, requiring advanced numerical optimization techniques.
 
-The first one, Main_3BP, can be considered a sort of 'real main' of the script. Here most of the variables are initialized (as for example the parameters of the spacecraft) and the equation of motion of the problem are defined. In this part basically no mathematical calculation are performed. The equation of motion are derived from the Hamiltonian of the problem, which has to be defined by the user. After that, the equations of motion are derived with symbolic manipulation as 'Function Handle' functions. Then they are converted into a common script. This last operation is done for double purposes: function handles are typically slower to run than a script with mathematical exrpressions, and they cannot be converted into C-code using the MATLAB Coder application.
+Key aspects:
 
-In Main_Extremal the optimization problem is solved. It is possible to run both Global and Local optimization algorithms, or only one of them, depending on the result needed. Here it is possible to finde the functions objfun_S and objfunSTM_S which compute a trajectory starting on an initial value of the costate (which can be given by the user, by the PSO algorithm or randomized). Those scripts are also available as a C-code with the extention '.mex'. In this case, they are divided into the 3 subclasses of problem that can be solved based on the thrust profile (minimum time problem, minimum energy problem, minimum fuel problem). The MATLAB scirpt is equivalent but has the capability to handle all 3 subclasses of problems at onece (at a cost of a higher runtime obviously). The final part of Main_Extremal consists of the function homotopy, which can be sued to perform the homotopic approach to reach low thrus levels.
+- **Optimal Control Approach:** The problem is formulated using Pontryagin's Maximum Principle (PMP), aiming to determine the optimal thrust direction.
+- **Global and Local Optimization:** 
+  - A Particle Swarm Optimization (PSO) algorithm provides an initial guess for the costate.
+  - Local refinement is performed using Newton-based optimization.
+- **Problem Dynamics:** The mission is modeled within the framework of the Restricted Three-Body Problem (RTBP).
+- **Homotopy Method:** To compute solutions for low thrust levels, a continuation approach gradually decreases the thrust-to-initial-mass ratio using previous solutions as initial guesses.
 
-Finally, in Main_Suff the NOG Algorithm is tested. In this part is is initially needed to determined if a given solution (i.e. the trajectory computed in Main_Extremal) satisfies the second order necessary condition for optimality. If that is the case, then it is possible to apply the NOG algorithm. In doing so, the user can select a time where a disturbance will occur during the nominal trajectory, and the magnitude of this disturbance. During the Thesis work the parameter affected by disturbances, were position, valocity and mass of the spacecraft at a given time. Once the parameters are set, the code will run the trajectory as nominal until the perturbation time, then the NOG algorithm will be applied to correct as possible the disturbances. If the given magnitude is too high, the algorithm will be not capable of correcting the trajectory to reach a satisfactory final state.
+In the second part, the **Neighboring Optimal Guidance (NOG)** algorithm is implemented to correct deviations caused by small perturbations (e.g., solar radiation pressure, non-uniform thrust). Users can simulate disturbances and observe how the algorithm reacts to restore the trajectory.
 
-- 3) Note
- 
-For a deeper explanation, it is possible to see the complete Master's Thesis fil using the link at the top of this file.
+---
+
+## 2. Code Structure
+
+The project is organized into three main modules:
+
+### 'Main_3BP' – Problem Setup
+- Initializes mission parameters and defines the equations of motion derived from the system's Hamiltonian.
+- Symbolic expressions are converted into efficient MATLAB scripts for performance and compatibility with MATLAB Coder.
+
+### 'Main_Extremal' – Trajectory Optimization
+- Solves the trajectory optimization using global (PSO) and local (Newtonian) methods.
+- Includes functions like:
+  - 'objfun_S', 'objfunSTM_S': compute trajectories from a given costate.
+  - '.mex' C-coded versions for performance.
+- Supports three problem classes: minimum-time, minimum-energy, and minimum-fuel.
+- Contains the 'homotopy' function to perform thrust continuation.
+
+### 'Main_Suff' – Neighboring Optimal Guidance
+- Verifies second-order optimality conditions.
+- Simulates perturbations (position, velocity, mass) and applies NOG corrections.
+- If the disturbance is too large, correction may fail, as expected for local guidance strategies.
+
+---
+
+## 3. Getting Started
+
+**Requirements:**
+- MATLAB (tested with R2022b)
+- Symbolic Math Toolbox, Global Optimisation Toolbox
+- MATLAB Coder (for C-code generation, optional)
+
+**How to Run:**
+1. Start from 'Main_3BP' to initialize parameters.
+2. Use 'Main_Extremal' to compute the optimal trajectory.
+3. Run 'Main_Suff' to test NOG corrections under user-defined disturbances.
+
+---
+
+## 4. Notes
+
+- For a full explanation of the theory, derivations, and implementation details, please refer to the full thesis using the link above.
+- This repository is intended for educational and research purposes.
+
+---
+
+## Acknowledgments
+
+This work was completed as part of the Master’s Thesis at Politecnico di Milano under the supervision of Prof. Francesco Topputo in collaboration with Leonardo Mazzini (Thales Alenia Space). A special thanks goes to Veronica Danesi who helped me with the mathematical formulations of the problem.
+
